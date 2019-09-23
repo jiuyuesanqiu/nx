@@ -1,23 +1,23 @@
 <template>
 	<view>
-		<view v-show="show">
-			<skeleton></skeleton>
-		</view>
+		 <button @click="skeleton">骨架屏</button>
 	</view>
 </template>
 
 <script>
-	import skeleton from "../../components/skeleton.vue";
 	export default {
 		data() {
 			return {
-				show: false
 			}
 		},
-		components: {
-			skeleton
-		},
 		onLoad: function() {
+		},
+		methods:{
+			skeleton(){
+				 uni.navigateTo({
+				 	url:'../skeleton/skeleton'
+				 })
+			}
 		}
 	}
 </script>

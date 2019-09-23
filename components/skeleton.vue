@@ -41,10 +41,7 @@
 			},
 			loading: {
 				type: String,
-				default: 'spin',
-				validator: function(value) {
-					return ['spin', 'chiaroscuro'].indexOf(value) !== -1
-				}
+				default: 'spin'
 			}
 		},
 		data() {
@@ -88,14 +85,12 @@
 				//绘制不带样式的节点
 				wx.createSelectorQuery().selectAll(`.${this.selector} >>> .${this.selector}-rect`).boundingClientRect().exec((res) => {
 					this.skeletonRectLists = res[0]
-					console.log(this.skeletonRectLists)
 				})
 			},
 			radiusHandle() {
 				const that = this;
 				wx.createSelectorQuery().selectAll(`.${this.selector} >>> .${this.selector}-radius`).boundingClientRect().exec((res) => {
 					this.skeletonCircleLists = res[0]
-					console.log(this.skeletonCircleLists)
 				})
 			}
 		}
