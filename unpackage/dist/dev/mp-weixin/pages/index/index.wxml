@@ -1,0 +1,1 @@
+<view><view hidden="{{!(show)}}"><skeleton vue-id="1" bind:__l="__l"></skeleton></view></view>
